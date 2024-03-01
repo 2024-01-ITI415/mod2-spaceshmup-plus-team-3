@@ -27,6 +27,10 @@ public class Hero : MonoBehaviour {
     // Create a WeaponFireDelegate field named fireDelegate.
     public WeaponFireDelegate fireDelegate;
 
+    // private int nextWeapon = 1;
+
+    // private int nextWeaponSlot = 1;
+
 	void Start()
     {
         if (S == null)
@@ -108,21 +112,55 @@ public class Hero : MonoBehaviour {
                 break;
 
             default:
-                if(pu.type == weapons[0].type)
-                {
+                // weapons[nextWeaponSlot].SetType(pu.type);
+                // int n = 0;
+                
+
                     Weapon w = GetEmptyWeaponSlot();
                     if(w != null)
                     {
                         // Set it to pu.type
                         w.SetType(pu.type);
+                    }else{
+                        for (int i=0; i<weapons.Length; i++)
+                        {
+                            if (weapons[i].type != pu.type && weapons[i].type != WeaponType.none)
+                            {
+                                weapons[i].SetType(pu.type);
+                                break;
+                            }
+                        }
                     }
-                }
-                else
-                {
-                    //If this is a different weapon type
-                    ClearWeapons();
-                    weapons[0].SetType(pu.type);
-                }
+                    
+                                
+
+                
+                
+                // nextWeapon ++;
+                // nextWeaponSlot = nextWeapon % 5;
+            
+
+
+
+
+
+                // if(pu.type == weapons[0].type)
+                // {
+                //     Weapon w = GetEmptyWeaponSlot();
+                //     if(w != null)
+                //     {
+                //         // Set it to pu.type
+                //         w.SetType(pu.type);
+                //     }else{
+                        
+                //     }
+                // }
+                // else
+                // {
+                //     //If this is a different weapon type
+                //     ClearWeapons();
+                //     weapons[0].SetType(pu.type);
+                // }
                 break;
         }
         pu.AbsorbedBy(gameObject);
