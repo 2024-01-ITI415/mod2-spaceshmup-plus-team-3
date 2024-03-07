@@ -364,7 +364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabEnemies:
-  - {fileID: 483717252518416664, guid: 63036a8103722e84981c2c3d8872b340, type: 3}
+  - {fileID: 1801717105832950, guid: 329d790814fcb3e48ab399276de647f4, type: 3}
   enemySpawnPerSecond: 0.5
   enemyDefaultPadding: 1.5
   weaponDefinitions:
