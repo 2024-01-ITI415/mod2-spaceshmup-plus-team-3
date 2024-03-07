@@ -319,7 +319,7 @@ MonoBehaviour:
   notifiedOfDestruction: 0
   miniEnemyPrefab: {fileID: 1801717105832950, guid: ac78ec1f0e75633439e53549ede796d3,
     type: 3}
-  spawnDelay: 5
+  spawnDelay: 3
   horizontalSpeed: 10
   movementRange: 20
   verticalPosition: 4
