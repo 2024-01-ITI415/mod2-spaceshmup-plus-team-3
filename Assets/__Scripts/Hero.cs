@@ -14,6 +14,7 @@ public class Hero : MonoBehaviour {
     public GameObject projectilePrefab;
     public float projectileSpeed = 40;
     public Weapon[] weapons;
+    public GameObject _Hero;
 
     [Header("Set Dynamically")]
     [SerializeField]
@@ -26,6 +27,7 @@ public class Hero : MonoBehaviour {
     public delegate void WeaponFireDelegate();
     // Create a WeaponFireDelegate field named fireDelegate.
     public WeaponFireDelegate fireDelegate;
+
 
 	void Start()
     {
@@ -47,6 +49,9 @@ public class Hero : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
     {
+
+        transform.LookAt(Camera.ma.ScreenToWorldPoint(Input.mousePosition));
+
         // Pull in information from the Input class
         float xAxis = Input.GetAxis("Horizontal");
         float yAxis = Input.GetAxis("Vertical");
