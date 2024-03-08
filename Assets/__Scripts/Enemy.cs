@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
@@ -20,9 +21,16 @@ public class Enemy : MonoBehaviour {
     public bool notifiedOfDestruction = false; // Will be used later
 
     protected BoundsCheck bndCheck;
-
+    //Create a reference to my timer script
+    private Timer timerScript;
     private void Awake()
     {
+        //Assigns the timer script variable to the in-game timer on each prefab on generation
+        timerScript = GameObject.FindGameObjectWithTag("TimerRef").GetComponent<Timer>();
+        if (timerScript == null )
+        {
+            Debug.LogError("Timer Script Was Not Properly Set");
+        }
         bndCheck = GetComponent<BoundsCheck>();
         // Get materials and colors for this GameObject and its children
         materials = Utils.GetAllMaterials(gameObject);
@@ -31,6 +39,11 @@ public class Enemy : MonoBehaviour {
         {
             originalColors[i] = materials[i].color;
         }
+
+        //Every 30 seconds add health and speed
+        int totalTime = ((Timer.minuteCount * 60) + (int)Timer.secondsCount) / 30;
+        health += (5 * totalTime);
+        speed += (5 * totalTime);
     }
 
     // This is a property: A method that acts like a field

@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using JetBrains.Annotations;
 
 public class Timer : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
 
-    private float secondsCount = 0f;
-    private int minuteCount = 0;
+    public static float secondsCount = 0f;
+    public static int minuteCount = 0;
 
     void FixedUpdate()
     {
