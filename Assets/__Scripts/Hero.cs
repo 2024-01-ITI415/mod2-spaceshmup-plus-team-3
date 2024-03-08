@@ -50,8 +50,6 @@ public class Hero : MonoBehaviour {
 	void Update()
     {
 
-        transform.LookAt(Camera.ma.ScreenToWorldPoint(Input.mousePosition));
-
         // Pull in information from the Input class
         float xAxis = Input.GetAxis("Horizontal");
         float yAxis = Input.GetAxis("Vertical");
