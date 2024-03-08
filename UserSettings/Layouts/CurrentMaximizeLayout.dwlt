@@ -330,7 +330,7 @@ MonoBehaviour:
       collapsed: 0
       displayed: 1
       snapOffset: {x: -171, y: -26}
-      snapOffsetDelta: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: -0.3999939}
       snapCorner: 3
       id: Tool Settings
       index: 0
@@ -790,9 +790,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_Size:
-    m_Target: 10
+    m_Target: 10.249839
     speed: 2
-    m_Value: 10
+    m_Value: 10.249839
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1022,7 +1022,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 12}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
