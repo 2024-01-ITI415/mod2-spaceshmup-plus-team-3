@@ -64,7 +64,7 @@ public class Main : MonoBehaviour {
         int ndx = Random.Range(0, prefabEnemies.Length);
         GameObject go = Instantiate<GameObject>(prefabEnemies[ndx]);
 
-        // Position the ENemy above the screen with a random x position
+        // Position the Enemy above the screen with a random x position
         float enemyPadding = enemyDefaultPadding;
         if (go.GetComponent<BoundsCheck>() != null)
         {
@@ -92,7 +92,7 @@ public class Main : MonoBehaviour {
     public void Restart()
     {
         // Reload _Scene_0 to restart the game
-        SceneManager.LoadScene("_Scene_0");
+        SceneManager.LoadScene("Game_Over");
     }
     ///<summary>
     ///Static function that gets a WeaponDefinition from the WEAP_DICT static
