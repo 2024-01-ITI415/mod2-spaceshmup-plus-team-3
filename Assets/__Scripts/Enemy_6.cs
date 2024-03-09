@@ -1,6 +1,8 @@
 using UnityEngine;
-
+using static UnityEngine.UI.Image;
+using UnityEngine.UIElements;
 // Enemy that moves horizontally and spawns mini-enemies
+
 public class Enemy_6 : Enemy
 {
     [Header("Set in Inspector: Enemy_6")]
@@ -17,11 +19,11 @@ public class Enemy_6 : Enemy
     void Start()
     {
         lastSpawnTime = Time.time; // Record enemy start time
-        originalX = transform.position.x; // Save original X position
+        originalX = transform.position.x; //Save original X position
         SetVerticalPosition(); // Set enemys vertical position
     }
 
-    void Update()
+    public override void Move()
     {
         MoveHorizontally(); // Handle horizontal movement
         // Check when to spawn new mini-enemy
@@ -30,16 +32,20 @@ public class Enemy_6 : Enemy
             SpawnMiniEnemy(); // Spawn mini-enemy
             lastSpawnTime = Time.time; // Reset spawn timer
         }
+
+        // Set enemy vertical position
+        if (showingDamage && Time.time > damageDoneTime)
+        {
+            HideDamage();
+        }
     }
 
-    // Set enemy vertical position
     void SetVerticalPosition()
     {
         Vector3 pos = transform.position; // Get current position
         pos.y = bndCheck.camHeight - verticalPosition; // Adjust vertical position
         transform.position = pos; // Apply new position
     }
-
     // Handles enemy horizontal movement
     void MoveHorizontally()
     {
@@ -52,7 +58,7 @@ public class Enemy_6 : Enemy
             }
             else
             {
-                movingRight = false; // Switch direction once range limit is reached
+                movingRight = false;
             }
         }
         else
@@ -64,14 +70,26 @@ public class Enemy_6 : Enemy
             }
             else
             {
-                movingRight = true; // Switch direction once range limit is reached
+                movingRight = true;
             }
         }
     }
-
     // Spawns mini-enemy at enemys current position
     void SpawnMiniEnemy()
     {
         Instantiate(miniEnemyPrefab, transform.position, Quaternion.identity); // Create new mini-enemy
+    }
+
+    // Mimic UnShowDamage
+    void HideDamage()
+    {
+        if (materials != null && originalColors != null)
+        {
+            for (int i = 0; i < materials.Length; i++)
+            {
+                materials[i].color = originalColors[i];
+            }
+        }
+        showingDamage = false;
     }
 }
