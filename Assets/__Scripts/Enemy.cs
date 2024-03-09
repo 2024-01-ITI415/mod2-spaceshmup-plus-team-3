@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour {
 
         //Every 30 seconds add health and speed
         int totalTime = ((Timer.minuteCount * 60) + (int)Timer.secondsCount) / 30;
-        health += (5 * totalTime);
+        health += (10 * totalTime);
         speed += (5 * totalTime);
     }
 
