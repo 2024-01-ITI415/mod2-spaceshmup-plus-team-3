@@ -184,6 +184,8 @@ public class Hero : MonoBehaviour {
             {
                 SceneManager.LoadScene("Game_Over");
                 Destroy(this.gameObject);
+                //Reset timer
+                Timer.RestartTimer();
                 // Tell Main.S to restart the game after a delay
                 Main.S.DelayedRestart(gameRestartDelay);
             }

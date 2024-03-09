@@ -38,4 +38,10 @@ public class Timer : MonoBehaviour
             timerText.text = minuteCount + ":" + secondsCount.ToString("F0");
         }
     }
+
+    public static void RestartTimer()
+    {
+        secondsCount = 0;
+        minuteCount = 0;
+    }
 }
