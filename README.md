@@ -13,3 +13,8 @@ at the lop of the screen, launching smaller ships every few seconds.
 # 05-Space-SHMUP - Max
 I changed the workings of how the guns work, When you get a pickup of a different type, instead of it clearing all pickups of the previous kind, it adds the new pickup to the 
 list of weapons, You can pickup items of the same kind until all weapons are the same.
+
+# 05-Space-SHMUP - Maria
+I changed the colors of the enemies so each are color-coded and updated the shield color. I created a title screen with a custom button and script that takes you to the game scene. Afterwards, I duplicated the title screen to create the end screen and altered the buttons. At this point, I edited the hero script, adding scene manager and had the Game Over screen's button send the player back to the game scene.
+
+We were able to merge all five of our branches. Everything went very smoothly and only needed minor bug fixing!
