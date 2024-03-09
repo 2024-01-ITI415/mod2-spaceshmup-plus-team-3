@@ -18,3 +18,7 @@ list of weapons, You can pickup items of the same kind until all weapons are the
 I changed the colors of the enemies so each are color-coded and updated the shield color. I created a title screen with a custom button and script that takes you to the game scene. Afterwards, I duplicated the title screen to create the end screen and altered the buttons. At this point, I edited the hero script, adding scene manager and had the Game Over screen's button send the player back to the game scene.
 
 We were able to merge all five of our branches. Everything went very smoothly and only needed minor bug fixing!
+
+We modified the values of the vanilla guns.
+Blaster - .5 dmg/.1 delay/50 velocity = 5 dmg per second
+Spread - 4 dmg/.5 delay/25 velocity = 8 * 3 dmg per second but shots are harder to hit
